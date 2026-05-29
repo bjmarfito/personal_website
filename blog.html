@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Bryan Marfito</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">Bryan Marfito</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <section class="hero fade-up">
+    <h1>Blog</h1>
+    <p class="hero-bio">Notes on earthquake science, geodesy methods, and field work. Written for curious scientists and students.</p>
+  </section>
+
+  <section class="section fade-up">
+    <div class="blog-filters" id="filters">
+      <button class="filter-btn active" data-tag="all">All</button>
+      <button class="filter-btn" data-tag="InSAR">InSAR</button>
+      <button class="filter-btn" data-tag="Tutorial">Tutorial</button>
+      <button class="filter-btn" data-tag="Fault Mechanics">Fault Mechanics</button>
+      <button class="filter-btn" data-tag="Explainer">Explainer</button>
+    </div>
+
+    <div class="blog-grid" id="blog-grid">
+
+      <a class="blog-card" href="blog-post.html" data-tags="InSAR,Tutorial,Sentinel-1">
+        <div class="card-meta">2024-11-10 &mdash; 8 min read</div>
+        <h3>Getting Started with InSAR: From Raw SAR to Deformation Maps</h3>
+        <p class="excerpt">A beginner-friendly walkthrough of the InSAR processing chain using Sentinel-1 data and open-source tools.</p>
+        <div class="tags">
+          <span class="tag">InSAR</span>
+          <span class="tag">Tutorial</span>
+          <span class="tag">Sentinel-1</span>
+        </div>
+      </a>
+
+      <a class="blog-card" href="blog-post.html" data-tags="Explainer,Fault Mechanics">
+        <div class="card-meta">2024-08-20 &mdash; 6 min read</div>
+        <h3>What Is Postseismic Deformation and Why Does It Matter?</h3>
+        <p class="excerpt">After an earthquake stops shaking, the ground keeps moving for months to years. Here's the physics behind it and what it reveals about fault behavior.</p>
+        <div class="tags">
+          <span class="tag">Explainer</span>
+          <span class="tag">Fault Mechanics</span>
+        </div>
+      </a>
+
+      <a class="blog-card" href="blog-post.html" data-tags="InSAR,Explainer">
+        <div class="card-meta">2024-04-05 &mdash; 5 min read</div>
+        <h3>Coulomb Stress: How One Earthquake Loads the Next</h3>
+        <p class="excerpt">An intuitive introduction to static stress transfer — why earthquakes often cluster in time and space, and how we model it with InSAR-derived slip models.</p>
+        <div class="tags">
+          <span class="tag">InSAR</span>
+          <span class="tag">Explainer</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2026 Bryan Marfito &mdash; Earth Observatory of Singapore, NTU</p>
+</footer>
+
+<script src="nav.js"></script>
+<script>
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.blog-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const tag = btn.dataset.tag;
+      cards.forEach(card => {
+        const tags = card.dataset.tags || '';
+        card.style.display = (tag === 'all' || tags.includes(tag)) ? '' : 'none';
+      });
+    });
+  });
+</script>
+</body>
+</html>

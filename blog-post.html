@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Getting Started with InSAR | Bryan Marfito</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">Bryan Marfito</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <div class="fade-up">
+    <a href="blog.html" style="font-size:0.85rem; color:var(--text-muted); display:inline-flex; align-items:center; gap:0.4rem; margin-bottom:2rem;">
+      &larr; Back to Blog
+    </a>
+
+    <div class="card-meta" style="margin-bottom:0.75rem;">2024-11-10 &mdash; 8 min read</div>
+    <h1 style="font-size:clamp(1.6rem,4vw,2.2rem); margin-bottom:1rem;">Getting Started with InSAR: From Raw SAR to Deformation Maps</h1>
+
+    <div class="tags" style="margin-bottom:2.5rem;">
+      <span class="tag">InSAR</span>
+      <span class="tag">Tutorial</span>
+      <span class="tag">Sentinel-1</span>
+    </div>
+
+    <article class="prose">
+      <p>
+        Interferometric Synthetic Aperture Radar (InSAR) is one of the most powerful tools in the
+        modern geophysicist's kit. With free Sentinel-1 data from ESA, you can measure centimeter-scale
+        ground deformation over hundreds of kilometers — from your laptop. This post walks through the
+        key steps in the processing chain.
+      </p>
+
+      <h2>What is SAR?</h2>
+      <p>
+        Synthetic Aperture Radar is an active microwave sensor mounted on a satellite. Unlike optical
+        cameras, SAR works day and night, through clouds, and can penetrate vegetation to some degree.
+        It illuminates the Earth with microwave pulses and records the backscattered signal — both
+        amplitude (how bright) and phase (where in the wave cycle the echo arrived).
+      </p>
+
+      <h2>The InSAR Principle</h2>
+      <p>
+        If we take two SAR images of the same area from (nearly) the same orbit position but at
+        different times, we can subtract the phase of one from the other. Any change in the
+        radar-to-ground distance — caused by ground deformation, for example — will show up as
+        phase fringes in the resulting interferogram. Each full color cycle (fringe) corresponds to
+        half the radar wavelength of line-of-sight displacement (~2.8 cm for Sentinel-1 C-band).
+      </p>
+
+      <h2>Key Processing Steps</h2>
+      <ol>
+        <li><strong>Co-registration</strong> — align the two SAR images to sub-pixel accuracy</li>
+        <li><strong>Interferogram formation</strong> — complex multiply image 1 by the conjugate of image 2</li>
+        <li><strong>Flat-Earth &amp; topographic phase removal</strong> — subtract the phase due to Earth's curvature and topography (using a DEM such as SRTM or Copernicus)</li>
+        <li><strong>Filtering</strong> — reduce phase noise with an adaptive filter (e.g., Goldstein filter)</li>
+        <li><strong>Phase unwrapping</strong> — convert wrapped (−π to π) phase to continuous displacement field</li>
+        <li><strong>Geocoding</strong> — project from radar coordinates to geographic coordinates</li>
+      </ol>
+
+      <h2>Tools to Get Started</h2>
+      <p>
+        The easiest entry point is <strong>ESA's SNAP</strong> (free), which handles Sentinel-1 SLC
+        data natively. For time-series analysis (tracking deformation over many acquisitions),
+        <strong>StaMPS</strong>, <strong>MintPy</strong>, and <strong>ISCE</strong> are widely used
+        in the research community.
+      </p>
+
+      <pre><code># Download Sentinel-1 SLC from Copernicus Data Space
+# then open in SNAP: File > Open Product > select .zip
+
+# For MintPy time-series after ISCE processing:
+smallbaselineApp.py inputs/GalapagosSenDT128.cfg</code></pre>
+
+      <h2>Common Pitfalls</h2>
+      <ul>
+        <li><strong>Temporal decorrelation</strong> — vegetation and water lose coherence quickly; prefer short time baselines in vegetated areas</li>
+        <li><strong>Atmospheric noise</strong> — tropospheric water vapor causes phase delays that mimic deformation; correct using ERA5 or GACOS</li>
+        <li><strong>Orbital errors</strong> — long-wavelength ramps in the interferogram from imprecise orbital data; correct by removing a polynomial trend or using precise orbits</li>
+      </ul>
+
+      <p>
+        InSAR is an art as much as a science — the best results come from understanding your
+        specific tectonic setting and knowing which artifacts to expect. Happy interferogramming!
+      </p>
+    </article>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2026 Bryan Marfito &mdash; Earth Observatory of Singapore, NTU</p>
+</footer>
+
+<script src="nav.js"></script>
+</body>
+</html>
