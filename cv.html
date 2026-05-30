@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CV | Bryan Marfito</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=4">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:ital,wght@0,300;0,400;0,500;1,400&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -20,36 +20,39 @@
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="research.html">Research</a></li>
-      <li><a href="blog.html">Blog</a></li>
       <li><a href="cv.html">CV</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </div>
 </nav>
 
-<main>
-  <section class="hero fade-up">
+<!-- Header -->
+<section class="home-section">
+  <div class="section-inner">
     <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:1rem; flex-wrap:wrap;">
-      <div>
+      <div class="section-heading">
         <h1>Curriculum Vitae</h1>
-        <p class="hero-bio" style="margin-top:0.5rem;">Earth Observatory of Singapore &mdash; Remote Sensing Lab<br>Asian School of the Environment, Nanyang Technological University</p>
+        <p>Earth Observatory of Singapore — Remote Sensing Lab, NTU</p>
       </div>
       <a class="btn btn-primary no-print" href="cv.pdf" download>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Download PDF
       </a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section fade-up">
-    <div class="section-header"><h2>Education</h2></div>
+<!-- Education -->
+<section class="home-section">
+  <div class="section-inner">
+    <div class="section-heading"><h1>Education</h1></div>
 
     <div class="cv-block">
       <div class="cv-block-header">
         <div class="cv-block-title">Nanyang Technological University, Singapore</div>
         <div class="cv-block-date">Feb 2022 – present</div>
       </div>
-      <div class="cv-block-sub">Ph.D., Environmental Earth System Science &mdash; Asian School of the Environment</div>
+      <div class="cv-block-sub">Ph.D., Environmental Earth System Science — Asian School of the Environment</div>
       <div class="cv-block-sub" style="color:var(--text-muted);">Supervisor: Sang-Ho Yun, PhD</div>
     </div>
 
@@ -58,7 +61,7 @@
         <div class="cv-block-title">University of the Philippines, Diliman</div>
         <div class="cv-block-date">Aug 2018 – Feb 2022</div>
       </div>
-      <div class="cv-block-sub">M.S., Geology &mdash; National Institute of Geological Sciences</div>
+      <div class="cv-block-sub">M.S., Geology — National Institute of Geological Sciences</div>
       <div class="cv-block-sub" style="color:var(--text-muted);">Thesis: Tectonic Geomorphology of the Philippine Fault in Surigao Strait</div>
       <div class="cv-block-sub" style="color:var(--text-muted);">Supervisor: Mario A. Aurelio, PhD</div>
     </div>
@@ -68,12 +71,15 @@
         <div class="cv-block-title">University of the Philippines, Diliman</div>
         <div class="cv-block-date">Jun 2009 – Apr 2014</div>
       </div>
-      <div class="cv-block-sub">B.S., Geology &mdash; National Institute of Geological Sciences</div>
+      <div class="cv-block-sub">B.S., Geology — National Institute of Geological Sciences</div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section fade-up">
-    <div class="section-header"><h2>Appointments</h2></div>
+<!-- Appointments -->
+<section class="home-section">
+  <div class="section-inner">
+    <div class="section-heading"><h1>Appointments</h1></div>
 
     <div class="cv-block">
       <div class="cv-block-header">
@@ -95,13 +101,16 @@
         <li>Generated InSAR deformation maps and Coulomb Stress transfer maps of moderate to large onland magnitude earthquakes (M<sub>W</sub> 6–7) in the Philippines from 2019 to 2021</li>
       </ul>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section fade-up">
-    <div class="section-header"><h2>Publications</h2></div>
+<!-- Publications -->
+<section class="home-section">
+  <div class="section-inner">
+    <div class="section-heading"><h1>Publications</h1></div>
 
     <div class="pub-year-group">
-      <div class="pub-year">IN PREPARATION</div>
+      <div class="pub-year">In Preparation</div>
       <div class="pub-entry">
         <div class="pub-title">Rheology of the Lower Crust Underneath Himalaya Revealed by A New Method</div>
         <div class="pub-authors"><strong>Marfito, B.</strong>, Mallick, R., Perry, M., Hill, E., Yun, S.H.</div>
@@ -174,10 +183,13 @@
         <div class="pub-badges"><a class="pub-badge doi" href="https://www.frontiersin.org/article/10.3389/feart.2021.801670" target="_blank" rel="noopener">DOI</a></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section fade-up">
-    <div class="section-header"><h2>Conferences &amp; Presentations</h2></div>
+<!-- Conferences -->
+<section class="home-section">
+  <div class="section-inner">
+    <div class="section-heading"><h1>Conferences &amp; Presentations</h1></div>
 
     <div class="cv-block">
       <div class="cv-block-header">
@@ -202,10 +214,13 @@
       </div>
       <div class="cv-block-sub"><strong>Marfito, B.</strong>, Salman, R., Way, L., Liang, C., Wang, K., Bürgmann, R., and Yun, S.H. — February 28–March 4, 2023</div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section fade-up">
-    <div class="section-header"><h2>Skills</h2></div>
+<!-- Skills -->
+<section class="home-section">
+  <div class="section-inner">
+    <div class="section-heading"><h1>Skills</h1></div>
     <div class="theme-grid">
       <div class="card">
         <h3>Remote Sensing</h3>
@@ -228,8 +243,8 @@
         </div>
       </div>
     </div>
-  </section>
-</main>
+  </div>
+</section>
 
 <footer>
   <p>&copy; 2026 Bryan Marfito &mdash; Earth Observatory of Singapore, NTU</p>

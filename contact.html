@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | Bryan Marfito</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=4">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:ital,wght@0,300;0,400;0,500;1,400&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -20,71 +20,65 @@
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="research.html">Research</a></li>
-      <li><a href="blog.html">Blog</a></li>
       <li><a href="cv.html">CV</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </div>
 </nav>
 
-<main>
-  <section class="hero fade-up">
-    <h1>Contact</h1>
-    <p class="hero-bio">
-      The best way to reach me is by email. I'm happy to discuss research collaborations, data
-      questions, or general inquiries about earthquake science and geodesy.
-    </p>
-  </section>
+<section class="home-section">
+  <div class="section-inner">
+    <div class="section-heading">
+      <h1>Contact</h1>
+      <p>The best way to reach me is by email. Happy to discuss research collaborations, data questions, or general inquiries.</p>
+    </div>
 
-  <section class="section fade-up">
-    <div class="section-header"><h2>Email</h2></div>
-    <div style="display:flex; align-items:center; gap:1rem; flex-wrap:wrap;">
-      <button class="contact-email-btn" id="copy-btn" onclick="copyEmail()">
+    <div style="display:flex; align-items:center; gap:1rem; flex-wrap:wrap; margin-bottom:1.5rem;">
+      <button class="contact-email-btn" onclick="copyEmail()">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
         bryanjim001@e.ntu.edu.sg
       </button>
       <span class="copy-feedback" id="copy-feedback">Copied!</span>
     </div>
-    <p style="margin-top:1rem; font-size:0.875rem; color:var(--text-muted);">
-      I typically respond within a few business days. For urgent matters, please indicate so in the subject line.
-    </p>
-  </section>
+    <p style="font-size:0.875rem; color:var(--text-muted);">I typically respond within a few business days.</p>
+  </div>
+</section>
 
-  <section class="section fade-up">
-    <div class="section-header"><h2>Find Me Online</h2></div>
-    <div class="social-links" style="flex-direction:column; align-items:flex-start;">
-      <a class="social-link" href="mailto:bryanjim001@e.ntu.edu.sg">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+<section class="home-section">
+  <div class="section-inner">
+    <div class="section-heading"><h1>Online Profiles</h1></div>
+    <div style="display:flex; flex-direction:column; gap:0.75rem;">
+      <a href="mailto:bryanjim001@e.ntu.edu.sg" style="display:flex; align-items:center; gap:0.6rem; font-size:0.9rem; color:var(--text); text-decoration:none;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text)'">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
         bryanjim001@e.ntu.edu.sg
       </a>
-      <a class="social-link" href="#" <!-- TODO: add Google Scholar URL -->>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
-        Google Scholar <!-- TODO: add real URL -->
+      <a href="#" style="display:flex; align-items:center; gap:0.6rem; font-size:0.9rem; color:var(--text); text-decoration:none;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text)'" <!-- TODO: add Google Scholar URL -->>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+        Google Scholar
       </a>
-      <a class="social-link" href="#" <!-- TODO: add ResearchGate URL -->>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-        ResearchGate <!-- TODO: add real URL -->
+      <a href="#" style="display:flex; align-items:center; gap:0.6rem; font-size:0.9rem; color:var(--text); text-decoration:none;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text)'" <!-- TODO: add ResearchGate URL -->>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        ResearchGate
       </a>
-      <a class="social-link" href="#" <!-- TODO: add LinkedIn URL -->>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 014 0v4M12 10v7"/></svg>
-        LinkedIn <!-- TODO: add real URL -->
+      <a href="#" style="display:flex; align-items:center; gap:0.6rem; font-size:0.9rem; color:var(--text); text-decoration:none;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text)'" <!-- TODO: add LinkedIn URL -->>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 014 0v4M12 10v7"/></svg>
+        LinkedIn
       </a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section fade-up">
-    <div class="section-header"><h2>Location</h2></div>
-    <div class="card" style="max-width:480px;">
-      <h3 style="margin-bottom:0.5rem;">Earth Observatory of Singapore</h3>
-      <p style="color:var(--text-muted); font-size:0.875rem; margin:0;">
-        Remote Sensing Lab (EOS–RS)<br>
-        Asian School of the Environment<br>
-        Nanyang Technological University<br>
-        Singapore
-      </p>
-    </div>
-  </section>
-</main>
+<section class="home-section">
+  <div class="section-inner">
+    <div class="section-heading"><h1>Location</h1></div>
+    <p style="font-size:0.9rem; color:var(--text-muted); line-height:2;">
+      Earth Observatory of Singapore — Remote Sensing Lab (EOS–RS)<br>
+      Asian School of the Environment<br>
+      Nanyang Technological University<br>
+      Singapore
+    </p>
+  </div>
+</section>
 
 <footer>
   <p>&copy; 2026 Bryan Marfito &mdash; Earth Observatory of Singapore, NTU</p>
